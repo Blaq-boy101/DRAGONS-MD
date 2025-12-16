@@ -1,7 +1,6 @@
 {
   
   "express, socket.io, whatsapp-web.js, qrcode, dotenv"
-npm i express socket.io whatsapp-web.js 
 
 {
   "private": true,
