@@ -1,30 +1,9 @@
-GitHub Copilot Chat Assistant.
-
-Good — you picked Option 2 (live pairing/QR). I can walk you through adding a live WhatsApp pairing page to your DRAGONS-MD repo and give a ready-to-run example. Quick questions before I make repo changes or show code you can copy:
-
-1) Do you want an example using whatsapp-web.js (most common and simple) or baileys (more advanced, multi-device support)?  
-2) Do you want me to create the files in your repository for you, or do you prefer copy/paste instructions so you add them yourself?  
-3) Where do you plan to host the pairing page/backend (Railway/Render/Heroku/Vercel serverless is not suitable because it needs a long-running process)?
-
-If you want a ready example now, here is a minimal, secure-enough blueprint using Node.js + whatsapp-web.js + socket.io that you can add to DRAGONS-MD. It:
-
-- runs a backend that creates the WhatsApp session and emits a QR (as a data URL) to connected browsers via WebSocket (socket.io)  
-- serves a small web page showing the QR live and status (pairing, ready)  
-- saves session data so the QR is needed only once (persistent session)  
-
-Files to add (summaries + code you can paste):
-
-1) package.json (dependencies)
-- express, socket.io, whatsapp-web.js, qrcode, dotenv
-Example dependencies snippet (run npm init and install instead):
-npm i express socket.io whatsapp-web.js qrcode dotenv
-
-2) server.js
+) server.js
 - Express + Socket.io server
 - Create whatsapp-web.js Client, convert QR string to dataURL with qrcode, emit to clients
 - Save session to disk (SESSION_FILE_PATH) and load if present
 
-Example server.js (shortened explanation — paste into file):
+server.js (shortened explanation — paste into file):
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -128,4 +107,3 @@ Run locally:
 - npm install
 - node server.js
 - open http://localhost:3000 to view the pairing page
-
