@@ -1,8 +1,13 @@
 {
+  
+  "express, socket.io, whatsapp-web.js, qrcode, dotenv"
+npm i express socket.io whatsapp-web.js 
+
+{
   "private": true,
   "scripts": {
     "lint": "eslint . --ext .mdx",
-    "pretest": "npm run lint",
+    "pretest": "npm i express socket.io whatsapp-web.js ",
     "prettier": "prettier --check --write .",
     "test": ""
   },
